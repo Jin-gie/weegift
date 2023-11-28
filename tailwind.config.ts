@@ -15,6 +15,7 @@ const config: Config = {
       },
     },
     colors: {
+      'white'         : '#FFFFFF',
 			'black'					: '#1C1C1C',
 			'text-black'		: '#333333',
 			'text-subtle'		: '#767676',
