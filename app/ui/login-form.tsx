@@ -10,7 +10,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '../lib/actions';
 
 export default function LoginForm() {
-  const [state, dispatch] = useFormState(authenticate, undefined);
+  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
   return (
     <form action={dispatch} className="space-y-3">
@@ -68,7 +68,7 @@ export default function LoginForm() {
           aria-atomic="true"
         >
           {
-            state === 'CredentitalsSignin' && (
+            errorMessage && (
               <>
                 <ExclamationCircleIcon className='h-5 w-5 text-red-error' />
                 <p className='text-sm text-red-error'>Invalid credentials</p>
