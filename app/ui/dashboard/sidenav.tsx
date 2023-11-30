@@ -1,10 +1,10 @@
-'use client';
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./nav-links";
 import { PowerIcon } from "@heroicons/react/24/outline";
 import JCVD from "@/public/assets/jean-claude-van-damme.jpeg";
 import { ButtonPrimary } from "../buttons";
+import { signOut } from "@/auth";
 
 export default function SideNav() {
 
@@ -33,7 +33,13 @@ export default function SideNav() {
       
       {/* SIGN OUT & INDEX */}
       <div className="flex flex-col gap-2 justify-center">
-        <form className="flex justify-center w-full">
+        <form
+          action={async () => {
+            'use server';
+            await signOut();
+          }}
+          className="flex justify-center"
+        >
           <ButtonPrimary>
             <PowerIcon className="w-6" />
             <p className="hidden md:block">Sign Out</p>

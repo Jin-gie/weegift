@@ -31,6 +31,7 @@ const config: Config = {
 			'pippin'				: "#F7DDD1",
 			'cream-brulee'	: "#ABD8DD",
 			'bg-dark-grey'	: "#EEEEEE",
+      'red-error'     : "#EF4444",
 		},
   },
   plugins: [],
